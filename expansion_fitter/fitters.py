@@ -84,5 +84,20 @@ class LineFitterWithSlopeMeasurement(LineFitter):
         return np.concatenate([y_errs, [self._slope_err]])
 
 
+def n_signmas_pars(delta_par0, delta_par1, covariance):
+    r"""How far is a point in 2D parameter space from the best fit point, in sigmas.
 
+    \left[
+    \sum_{\alpha\beta}
+        (\lambda_\alpha - \hat\lambda_\alpha)
+        C^{-1})_{\alpha\beta}
+        (\lambda_\beta - \hat\lambda_\beta)
+    \right]^{1/2}
+
+    Provide (\lambda_0 - \hat\lambda_0), (\lambda_1 - \hat\lambda_1), and C.
+
+    """
+    sig_squared = np.dot(np.dot([delta_par0, delta_par1], np.linalg.inv(covariance)),
+                         [delta_par0, delta_par1])
+    return np.sqrt(sig_squared)
 
