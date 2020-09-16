@@ -1,12 +1,15 @@
 [tool.poetry]
-name = "hello_world"
+name = "expansion-fitter"
 version = "0.1"
-description = "8.942 Environment setup example."
+description = "Expansion history data analysis assignment"
 authors = ["Kiyoshi Masui <kmasui@mit.edu>"]
 packages = [
-    {include = "hello_world"}
+    {include = "expansion_fitter"}
     ]
 
 [tool.poetry.dependencies]
 python = "^3.6"
 pytest = "^3.0"
+numpy = "^1.18.1"
+scipy = "^1.4.1"
+matplotlib = "^3.1.1"
