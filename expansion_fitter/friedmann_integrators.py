@@ -1,1 +1,1 @@
-"""Copy code from week 3 P-set into here."""
+"""Copy code from Friedmann integrator assignment here."""
